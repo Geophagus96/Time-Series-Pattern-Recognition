@@ -1,6 +1,5 @@
 #include <RcppArmadillo.h>
 #include <math.h>
-#include <iostream>
 #include "dist_upattern.h"
 
 using namespace Rcpp;
