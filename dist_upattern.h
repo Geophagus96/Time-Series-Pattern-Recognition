@@ -11,15 +11,19 @@ using namespace std;
 //[[Rcpp::depends(RcppArmadillo)]]
 
 //[[Rcpp::export]]
+//distance between the standardized series and a second-order u-curve
 double dist_upattern(const vec &input);
 
 //[[Rcpp::export]]
+//distance between the standardized series and a first-order u-curve
 double dist_upattern2(const vec &input);
 
 //[[Rcpp::export]]
+//distance between the standardized series and a second-order l-curve
 double dist_lpattern(const vec &input);
 
 //[[Rcpp::export]]
+//distance between two standardized series by l2 norm
 double stand_dist_2series(const vec &input1, const vec &input2);
 
 double dist_upattern2(const vec &input){
@@ -111,7 +115,7 @@ double dist_lpattern(const vec &input){
 
 double stand_dist_2series(const vec &input, const vec &compare){
   double dist;
-  if ((input.has_inf())or(input.has_inf())){
+  if ((input.has_inf())or(compare.has_inf())){
     dist = 1;
   }
   else{
